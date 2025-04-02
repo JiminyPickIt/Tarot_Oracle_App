@@ -1,6 +1,12 @@
 from flask import Flask
+import os
+
 app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return 'Mystic Frog Oracle is LIVE!'
+    return '🐸 Mystic Frog Oracle is LIVE!'
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 10000))
+    app.run(host='0.0.0.0', port=port)
